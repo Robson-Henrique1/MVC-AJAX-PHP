@@ -12,16 +12,23 @@ Class Tipo{
             echo 'error nulo';
         }else if (is_numeric($nomeTipo) ){
                 echo 'e numeros';
+        }else if(strlen($nomeTipo) > 15){
+            echo 'error';
         }else{
             $this->tipoModel->salvar($nomeTipo);
         }
        
-        header("Location: http://localhost:3000/view/tipos/tipo_view.php#");
+        header("Location: http://localhost:3000/view/tipos/tipo_view.html#");
 
     }
     public function listarTipo(){
         $tipos = $this->tipoModel->listar();
         echo json_encode($tipos);
+    }
+    public function delet(){
+        $data = json_decode(file_get_contents('php://input'), true);
+       $del= $this->tipoModel->deletar($data['id']);
+       echo json_encode($del);
     }
 }
 $funcao = $_GET['funcao'];

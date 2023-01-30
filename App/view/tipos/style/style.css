@@ -1,0 +1,14 @@
+.queijo {
+    margin-top: 3px;
+    margin-left: 50px;
+    background-color: rgb(241, 3, 3); /* Green */
+    border: none;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    border-radius: 12px;
+
+}

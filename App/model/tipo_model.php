@@ -15,8 +15,15 @@ class TipoModel
     }
     public function listar()
     {
-        $sql = "SELECT name FROM tipos";
+        $sql = "SELECT * FROM tipos";
         $result = mysqli_query($this->conexao->getConnection(), $sql);
         return  mysqli_fetch_all($result);
     }
+    public function deletar($id)
+    {
+        $query = "DELETE FROM tipos WHERE id = $id";
+        mysqli_query($this->conexao->getConnection(), $query);
+        return true;
+    }
+    
 }
