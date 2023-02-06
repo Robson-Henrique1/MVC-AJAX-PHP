@@ -24,11 +24,7 @@ function listar(){
             delet.setAttribute("onclick", "buttonClick("+id+")");
             list.appendChild(delet);
             list.style.display = "grid";
-            list.style.gridTemplateColumns = "1fr 1fr";
-            
-            
-            
-            
+            list.style.gridTemplateColumns = "1fr 1fr";  
         }
 
         $('#container').append(list);

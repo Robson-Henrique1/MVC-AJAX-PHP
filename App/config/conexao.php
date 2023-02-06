@@ -4,7 +4,7 @@ class Conexao
     private $nomeservidor = "localhost";
     private $usuario = "Debaby";
     private $senha = "Aloc@12345";
-    private $banco = "db_teste";
+    private $banco = "teste3";
     public function getConnection()
     {
         $conn =  new mysqli($this->nomeservidor, $this->usuario, $this->senha, $this->banco);
