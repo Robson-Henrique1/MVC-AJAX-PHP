@@ -35,8 +35,9 @@ class Entrada
     }
     public function listarEntrada()
     {
-        $tipos = $this->entradaModel->listarModel();
-        echo json_encode($tipos);
+        $entradas = $this->entradaModel->listarModel();
+        $total = $entradas[0]['total'];
+        echo json_encode($entradas);
     }
     public function delet()
     {
