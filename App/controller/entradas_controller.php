@@ -3,10 +3,10 @@ require '../model/entradas_model.php';
 
 class Entrada
 {
-    private $tipoModel;
+    private $entradaModel;
     public function __construct()
     {
-        $this->tipoModel = new EntradasModel();
+        $this->entradaModel = new EntradasModel();
     }
     public function salvarEntrada()
     {
@@ -22,7 +22,7 @@ class Entrada
         } else if (strlen($descricao) > 15) {
             echo 'error';
         } else {
-            $resposta = $this->tipoModel->salvarModel($id,$id_tipo,$descricao,$date);
+            $resposta = $this->entradaModel->salvarModel($id,$id_tipo,$descricao,$date);
            $arrayz['descricao'] = $data['descricao'];
            $arrayz['date'] = date("Y/m/d");
            $arrayz['id'] =  $data['id'];
@@ -35,13 +35,13 @@ class Entrada
     }
     public function listarEntrada()
     {
-        $tipos = $this->tipoModel->listarModel();
+        $tipos = $this->entradaModel->listarModel();
         echo json_encode($tipos);
     }
     public function delet()
     {
         $data = json_decode(file_get_contents('php://input'), true);
-        $del = $this->tipoModel->deletarModel($data['id']);
+        $del = $this->entradaModel->deletarModel($data['id']);
         $arrayz['id'] = $data['id'];
         $arrayz['status'] = $del;
         $arrayz['msg'] = "DELETEI";
@@ -49,7 +49,7 @@ class Entrada
     }
     public function editar(){
         $data = json_decode(file_get_contents('php://input'), true);
-        $resposta = $this->tipoModel->editarModel( $data['id'],$data['id2'],$data['descricao'],$data['date']);
+        $resposta = $this->entradaModel->editarModel( $data['id'],$data['id2'],$data['descricao'],$data['date']);
         $arrayz['id'] = $data['id'];
         $arrayz['descricao'] = $data['descricao'];
         echo json_encode($arrayz);

@@ -18,7 +18,7 @@ class SaidaModel
     }
     public function listarModel()
     {
-        $sql = "SELECT Saidas.id_saida,Tipos_Saida.id_tipo_saida, Tipos_Saida.nome, Saidas.descricao, Saidas.data_hora_saida
+        $sql = "SELECT Saidas.id_saida,Tipos_Saida.id_tipo_saida, Tipos_Saida.nome, Saidas.descricao, Saidas.data_hora_saida, Saidas.valor,SUM(Saidas.valor) as 'total'
         FROM Saidas
         INNER JOIN Tipos_Saidas
         ON Saidas.id_tipo_saida = Tipos_Saida.id_tipo_saida;";

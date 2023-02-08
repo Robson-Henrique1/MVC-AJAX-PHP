@@ -1,6 +1,6 @@
 <?php
 require '../config/conexao.php';
-class TipoEntradasModel
+class EntradasModel
 {
     private $conexaoInstance;
     private $conexao;

@@ -6,7 +6,7 @@ class TipoEntrada
     private $tipoModel;
     public function __construct()
     {
-        $this->tipoModel = new TipoEntradasModel();
+        $this->tipoModel = new EntradasModel();
     }
     public function salvarTipo()
     {
