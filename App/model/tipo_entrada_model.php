@@ -18,19 +18,19 @@ class EntradasModel
     }
     public function listar()
     {
-        $sql = "SELECT * FROM entradas";
+        $sql = "SELECT * FROM tipos_entradas";
         $result = mysqli_query($this->conexao, $sql);
         return  mysqli_fetch_all($result);
     }
     public function deletar($id)
     {
-        $query = "DELETE FROM entradas WHERE id_entrada = $id";
+        $query = "DELETE FROM tipos_entradas WHERE id_tipo_entrada = $id";
         mysqli_query($this->conexao, $query);
         return true;
     }
     public function editar($nomeEditar,$id)
     {
-        $query = "UPDATE entradas SET descricao = '$nomeEditar' WHERE id_entrada = $id";
+        $query = "UPDATE tipos_entradas SET nome = '$nomeEditar' WHERE id_tipo_entrada = $id";
         mysqli_query($this->conexao, $query);
         return true;
     }

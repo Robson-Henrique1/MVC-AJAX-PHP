@@ -28,9 +28,9 @@ class TipoSaidaModel
         mysqli_query($this->conexao, $query);
         return true;
     }
-    public function editar($nomeEditar,$id)
+    public function editar($id,$nome)
     {
-        $query = "UPDATE tipos_saida SET nome = '$nomeEditar' WHERE id_tipo_saida = $id";
+        $query = "UPDATE tipos_saidas SET nome = '$nome' WHERE id_tipo_saida = $id";
         mysqli_query($this->conexao, $query);
         return true;
     }

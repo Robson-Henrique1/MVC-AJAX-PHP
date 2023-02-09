@@ -44,9 +44,11 @@ class TipoSaida
     }
     public function editar(){
         $data = json_decode(file_get_contents('php://input'), true);
-        $this->tipoModel->editar( $data['nome'],$data['id']);
-        $arrayz['id'] = $data['id'];
-        $arrayz['nome'] = $data['nome'];
+        $id = $data['id'];
+        $nome = $data['nome'];
+        $arrayz['status'] = $this->tipoModel->editar($id,$nome);
+        $arrayz['id'] = $id;
+        $arrayz['nome'] = $nome;
         echo json_encode($arrayz);
     }
     
