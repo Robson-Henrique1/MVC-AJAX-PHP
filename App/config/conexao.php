@@ -2,8 +2,8 @@
 class Conexao
 {
     private $nomeservidor = "localhost";
-    private $usuario = "Debaby";
-    private $senha = "Aloc@12345";
+    private $usuario = "root";
+    private $senha = "1234";
     private $banco = "bisa_teste";
     public function getConnection()
     {

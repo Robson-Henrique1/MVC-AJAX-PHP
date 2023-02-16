@@ -70,8 +70,11 @@ class TipoSaida
             return;
         }
         $data = json_decode(file_get_contents('php://input'), true);
+        echo "data: ".print_r($data,true)."<br>";
         $id = $data['id'];
         $nome = $data['nome'];
+        // echo "nome: ".$nome."<br>";
+        // echo "id: ".$id."<br>";
 
         if (trim($id == null)) {
             echo 'O id e nulo';
@@ -87,7 +90,7 @@ class TipoSaida
             echo 'O tipo numero não e aceito';
             return;
         }
-        $resposta = $this->tipoModel->editar($nome, $id);
+        $resposta = $this->tipoModel->editar($id, $nome);
         $arrayz['id'] = $data['id'];
         $arrayz['nome'] = $data['nome'];
         echo json_encode($arrayz);
